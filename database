@@ -1,0 +1,17 @@
+CREATE TABLE USER (
+  idUser INTEGER,
+  name   NVARCHAR(200),
+  currentidArticle BLOB,
+  currentState INTEGER DEFAULT 0,
+  verification DEFAULT FALSE
+);
+CREATE TABLE ARTICLE (
+  idArticle   BLOB PRIMARY KEY,
+  tag         NVARCHAR(100),
+  description NVARCHAR(1000),
+  link        NVARCHAR(1000),
+  dataCreate  NVARCHAR(50),
+  idMessage   INTEGER,
+  idUser      INTEGER,
+  FOREIGN KEY (idUser) REFERENCES USER (idUser)
+);
