@@ -32,7 +32,7 @@ def startСommand(message):
 def addLinkCommand(message):
     if chekUser(message.chat.id) is True:
         bot.send_message(message.chat.id,
-                         "Введите тег статьи(например тестирование)")
+                         "Введите тег статьи(например #Тестирование или #Внутренние_конференции)")
         idArticle = uuid.uuid4()
         addArticle(idArticle, message.chat.id)
         setCurrentidArticle(message.chat.id, idArticle)
